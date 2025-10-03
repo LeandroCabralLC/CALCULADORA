@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="tema-1">
+
+    <main class="calculadora">
+        <header class="calculadora__cabecalho">
+            <h1>calc</h1>
+            <div class="seletor-tema">
+                <label>TEMA</label>
+                <div class="seletor-tema__controle">
+                    <div class="rotulos-tema">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                    </div>
+                    <div class="seletor-tema__container">
+                      <div class="seletor-tema__cursor"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="calculadora__tela">
+            <p id="tela">0</p>
+        </section>
+
+        <section class="calculadora__teclado">
+            <button class="tecla tecla--numero" data-valor="7">7</button>
+            <button class="tecla tecla--numero" data-valor="8">8</button>
+            <button class="tecla tecla--numero" data-valor="9">9</button>
+            <button class="tecla tecla--especial" data-acao="deletar">DEL</button>
+            
+            <button class="tecla tecla--numero" data-valor="4">4</button>
+            <button class="tecla tecla--numero" data-valor="5">5</button>
+            <button class="tecla tecla--numero" data-valor="6">6</button>
+            <button class="tecla tecla--operador" data-acao="somar">+</button>
+            
+            <button class="tecla tecla--numero" data-valor="1">1</button>
+            <button class="tecla tecla--numero" data-valor="2">2</button>
+            <button class="tecla tecla--numero" data-valor="3">3</button>
+            <button class="tecla tecla--operador" data-acao="subtrair">-</button>
+            
+            <button class="tecla tecla--numero" data-valor=".">.</button>
+            <button class="tecla tecla--numero" data-valor="0">0</button>
+            <button class="tecla tecla--operador" data-acao="dividir">/</button>
+            <button class="tecla tecla--operador" data-acao="multiplicar">x</button>
+            
+            <button class="tecla tecla--larga tecla--especial" data-acao="limpar">LIMPAR</button>
+            <button class="tecla tecla--larga tecla--igual" data-acao="igual">=</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

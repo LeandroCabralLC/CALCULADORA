@@ -1,0 +1,252 @@
+:root {
+    --fundo-principal: hsl(222, 26%, 31%);
+    --fundo-teclado: hsl(223, 31%, 20%);
+    --fundo-tela: hsl(224, 36%, 15%);
+    --tecla-especial-fundo: hsl(225, 21%, 49%);
+    --tecla-especial-sombra: hsl(224, 28%, 35%);
+    --tecla-igual-fundo: hsl(6, 63%, 50%);
+    --tecla-igual-sombra: hsl(6, 70%, 34%);
+    --tecla-primaria-fundo: hsl(30, 25%, 89%);
+    --tecla-primaria-sombra: hsl(28, 16%, 65%);
+    --texto-principal: white;
+    --texto-secundario: hsl(221, 14%, 31%);
+    --texto-igual: white;
+    --texto-especial: white;
+    --tecla-igual-hover: hsl(6, 80%, 60%);
+    --tecla-especial-hover: hsl(225, 30%, 65%);
+    --tecla-primaria-hover: hsl(0, 0%, 100%);
+}
+
+
+
+body.tema-2 {
+    --fundo-principal: hsl(0, 0%, 90%);
+    --fundo-teclado: hsl(0, 5%, 81%);
+    --fundo-tela: hsl(0, 0%, 93%);
+    --tecla-especial-fundo: hsl(185, 42%, 37%);
+    --tecla-especial-sombra: hsl(185, 58%, 25%);
+    --tecla-igual-fundo: hsl(25, 98%, 40%);
+    --tecla-igual-sombra: hsl(25, 99%, 27%);
+    --tecla-primaria-fundo: hsl(45, 7%, 89%);
+    --tecla-primaria-sombra: hsl(35, 11%, 61%);
+    --texto-principal: hsl(60, 10%, 19%);
+    --texto-secundario: hsl(60, 10%, 19%);
+    --texto-igual: white;
+    --texto-especial: white;
+    --tecla-igual-hover: hsl(25, 100%, 55%);
+    --tecla-especial-hover: hsl(185, 40%, 55%);
+    --tecla-primaria-hover: hsl(0, 0%, 100%);
+}
+
+
+body.tema-3 {
+    --fundo-principal: hsl(268, 75%, 9%);
+    --fundo-teclado: hsl(268, 71%, 12%);
+    --fundo-tela: hsl(268, 71%, 12%);
+    --tecla-especial-fundo: hsl(281, 89%, 26%);
+    --tecla-especial-sombra: hsl(285, 91%, 52%);
+    --tecla-igual-fundo: hsl(176, 100%, 44%);
+    --tecla-igual-sombra: hsl(177, 92%, 70%);
+    --tecla-primaria-fundo: hsl(268, 47%, 21%);
+    --tecla-primaria-sombra: hsl(290, 70%, 36%);
+    --texto-principal: hsl(52, 100%, 62%);
+    --texto-secundario: hsl(52, 100%, 62%);
+    --texto-igual: hsl(198, 20%, 13%);
+    --texto-especial: white;
+    --tecla-igual-hover: hsl(176, 100%, 65%);
+    --tecla-especial-hover: hsl(281, 70%, 45%);
+    --tecla-primaria-hover: hsl(268, 50%, 40%);
+}
+
+
+/*  LIMPAR E ESTILOS GERAIS
+  */ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--fundo-principal);
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* 
+    ESTRUTURA E COMPONENTES DA CALCULADORA
+    */
+
+.calculadora {
+    width: 100%;
+    max-width: 540px;
+    padding: 0 24px;
+}
+
+.calculadora__cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--texto-principal);
+    margin-bottom: 32px;
+}
+
+.calculadora__cabecalho h1 {
+    font-size: 32px;
+}
+
+.seletor-tema {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.seletor-tema label {
+    font-size: 12px;
+    letter-spacing: 1px;
+    align-self: flex-end;
+    margin-bottom: 5px;
+}
+
+.seletor-tema__controle {
+    display: flex;
+    flex-direction: column;
+}
+
+.rotulos-tema {
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+.seletor-tema__container {
+    background-color: var(--fundo-teclado);
+    width: 70px;
+    height: 26px;
+    border-radius: 13px;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.seletor-tema__cursor {
+    background-color: var(--tecla-igual-fundo);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+body.tema-1 .seletor-tema__cursor { transform: translateX(0); }
+body.tema-2 .seletor-tema__cursor { transform: translateX(22px); }
+body.tema-3 .seletor-tema__cursor { transform: translateX(44px); }
+
+
+/* Tela*/
+.calculadora__tela {
+    background-color: var(--fundo-tela);
+    color: var(--texto-principal);
+    border-radius: 10px;
+    padding: 35px 32px;
+    margin-bottom: 24px;
+    text-align: right;
+    font-size: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/*Teclado Numérico  */
+.calculadora__teclado {
+    background-color: var(--fundo-teclado);
+    border-radius: 10px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.tecla {
+    border: none;
+    border-radius: 10px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 42px;
+    padding-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Variações de Teclas */
+.tecla--numero,
+.tecla--operador {
+    background-color: var(--tecla-primaria-fundo);
+    box-shadow: 0 4px 0 var(--tecla-primaria-sombra);
+    color: var(--texto-secundario);
+}
+
+.tecla--operador {
+    font-size: 28px;
+}
+
+.tecla--especial {
+    background-color: var(--tecla-especial-fundo);
+    box-shadow: 0 4px 0 var(--tecla-especial-sombra);
+    color: var(--texto-especial);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.tecla--igual {
+    background-color: var(--tecla-igual-fundo);
+    box-shadow: 0 4px 0 var(--tecla-igual-sombra);
+    color: var(--texto-igual);
+}
+
+.tecla--larga {
+    grid-column: span 2;
+    font-size: 30px;
+}
+
+
+.tecla--numero:hover,
+.tecla--operador:hover {
+    background-color: var(--tecla-primaria-hover);
+}
+
+.tecla--especial:hover {
+    background-color: var(--tecla-especial-hover);
+}
+
+.tecla--igual:hover {
+    background-color: var(--tecla-igual-hover);
+}
+
+.seletor-tema__cursor:hover {
+    background-color: var(--tecla-igual-hover);
+}
+
+/* 
+   RESPONSIVIDADE
+    */
+
+@media (max-width: 500px) {
+    .calculadora__teclado {
+        gap: 15px;
+        padding: 24px;
+    }
+    .tecla {
+        font-size: 28px;
+    }
+    .calculadora__tela {
+        font-size: 48px;
+        padding: 30px 24px;
+    }
+}
